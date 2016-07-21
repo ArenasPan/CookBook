@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#26a6f1"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/title_detail"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/cook_book_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:text="名称"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/seasoning"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cook_book_seasoning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/textview_detail_border"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/method"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cook_book_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/textview_detail_border"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:id="@+id/title_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/remark"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cook_book_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/textview_detail_border"
+            android:layout_margin="10dp" />
+
+    </LinearLayout>
+</ScrollView>
