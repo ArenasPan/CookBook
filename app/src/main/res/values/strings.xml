@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">特百惠食谱</string>
 
+    <string name="export">导出</string>
+
     <string name="no_data_tip">暂无食谱数据,请点击左上角添加按钮添加食谱数据</string>
 
     <string name="title_add">添加食谱</string>

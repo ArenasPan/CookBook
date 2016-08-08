@@ -18,7 +18,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:padding="3dp"
             android:src="@mipmap/add_comment" />
+
+        <TextView
+            android:id="@+id/tv_export"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/add"
+            android:background="@android:color/white"
+            android:padding="5dp"
+            android:text="@string/export"
+            android:textColor="#26a6f1" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,14 +49,50 @@
             android:layout_centerVertical="true"
             android:src="@android:drawable/ic_menu_search" />
 
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
         <EditText
             android:id="@+id/et_search"
             android:layout_width="80dp"
-            android:layout_toLeftOf="@id/search_button"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:background="@drawable/edittext_search"
-            android:padding="5dp"
-            android:layout_centerVertical="true"
-            android:layout_height="wrap_content" />
+            android:padding="5dp" />
+
+        <LinearLayout
+            android:id="@+id/layout_search_classify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/search_selector_backgroud"
+            android:layout_below="@id/et_search"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_search_classify"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name" />
+            <ImageView
+                android:src="@mipmap/arrow_down"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+        </LinearLayout>
+
     </RelativeLayout>
 
 
@@ -53,18 +102,18 @@
 
         <TextView
             android:id="@+id/text_no_data"
-            android:text="@string/no_data_tip"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:layout_margin="50dp"
-            android:textColor="@android:color/holo_red_dark"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_margin="50dp"
+            android:gravity="center"
+            android:text="@string/no_data_tip"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycle_view"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="gone" />
     </FrameLayout>
 </LinearLayout>

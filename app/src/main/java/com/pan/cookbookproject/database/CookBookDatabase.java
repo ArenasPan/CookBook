@@ -124,14 +124,37 @@ public class CookBookDatabase {
      * 条件查询
      *
      * @param word
+     * @param type 0:按名称查询 1:按原料查询 2:按做法查询 3:按备注查询
      * @return 查询的结果集合
      */
-    public List<CookBookBean> fuzzyQuery(String word) {
+    public List<CookBookBean> fuzzyQuery(String word, int type) {
         SQLiteDatabase sqlite = databaseHelper.getReadableDatabase();
         ArrayList<CookBookBean> data = null;
         data = new ArrayList<CookBookBean>();
-        Cursor cursor = sqlite.rawQuery("select * from "
-                + DatabaseHelper.COOK_BOOK_TABLE_NAME + " where name like ?", new String[]{"%" + word + "%"});
+        Cursor cursor;
+        switch (type) {
+            case 0:
+                cursor = sqlite.rawQuery("select * from "
+                        + DatabaseHelper.COOK_BOOK_TABLE_NAME + " where name like ?", new String[]{"%" + word + "%"});
+            default:
+                cursor = sqlite.rawQuery("select * from "
+                        + DatabaseHelper.COOK_BOOK_TABLE_NAME + " where name like ?", new String[]{"%" + word + "%"});
+                break;
+            case 1:
+                cursor = sqlite.rawQuery("select * from "
+                        + DatabaseHelper.COOK_BOOK_TABLE_NAME + " where seasoning like ?", new String[]{"%" + word + "%"});
+                break;
+            case 2:
+                cursor = sqlite.rawQuery("select * from "
+                        + DatabaseHelper.COOK_BOOK_TABLE_NAME + " where method like ?", new String[]{"%" + word + "%"});
+                break;
+            case 3:
+                cursor = sqlite.rawQuery("select * from "
+                        + DatabaseHelper.COOK_BOOK_TABLE_NAME + " where remark like ?", new String[]{"%" + word + "%"});
+                break;
+        }
+//        Cursor cursor = sqlite.rawQuery("select * from "
+//                + DatabaseHelper.COOK_BOOK_TABLE_NAME + " where name like ?", new String[]{"%" + word + "%"});
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             CookBookBean cookBookBean = new CookBookBean();
             cookBookBean.setId(cursor.getInt(0));
